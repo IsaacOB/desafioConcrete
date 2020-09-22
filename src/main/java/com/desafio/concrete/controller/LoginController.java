@@ -1,6 +1,7 @@
 package com.desafio.concrete.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,12 +16,12 @@ import com.desafio.concrete.repository.FormularioRepository;
 import com.desafio.concrete.repository.PhoneRepository;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class LoginController {
 
 	@Autowired
 	FormularioRepository formularioRepository;
-	
+
 	@Autowired
 	PhoneRepository phoneRepository;
 

@@ -7,6 +7,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -22,7 +23,7 @@ import com.desafio.concrete.model.Formulario;
 import com.desafio.concrete.repository.FormularioRepository;
 
 @Controller
-@RequestMapping("/perfil")
+@RequestMapping(value = "/perfil", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class PerfilUsuarioController {
 
 	private static final int MINUTE = 60000;
